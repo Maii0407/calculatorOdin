@@ -5,6 +5,16 @@ body {
     justify-content: center;
 }
 
+button {
+    border: none;
+    background-color: #353839;
+    color: white;
+}
+
+button:hover {
+    background-color: dimgray;
+}
+
 #container {
     width: 1000px;
     height: 500px;
@@ -15,9 +25,62 @@ body {
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
-.output-container {
-    background-color: #343434;
+#output {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+
+}
+
+#clearBtn {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#deleteBtn {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+#plusBtn {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#minusBtn {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#timesBtn {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#divideBtn {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+#num0 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
 }
