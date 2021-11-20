@@ -12,11 +12,11 @@
 <body>
     <div id="container">
         <div class="output-container">
-            <div id="output">0</div>
+            <input type="text" id="output">
         </div>
         <div class="button-container">
-            <button class="number" value="1">1</button>
-            <button class="number" value="2">2</button>
+            <button class="number" value="1" onclick="calDisplay(1)">1</button>
+            <button class="number" value="2" onclick="calDisplay(2)">2</button>
             <button class="number" value="3">3</button>
             <button class="number" value="4">4</button>
             <button class="number" value="5">5</button>
@@ -26,7 +26,7 @@
             <button class="number" value="9">9</button>
             <button class="number" id="num0" value="0">0</button>
             <button class="number">.</button>
-            <button class="operator" id="plusBtn">+</button>
+            <button class="operator" id="plusBtn" onclick="calDisplay('+')">+</button>
             <button class="operator" id="minusBtn">-</button>
             <button class="operator" id="timesBtn">x</button>
             <button class="operator" id="divideBtn">÷</button>
