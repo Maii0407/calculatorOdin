@@ -23,11 +23,24 @@ button:hover {
     grid-template-rows: 1fr 3fr;
 }
 
-#output {
+.output-container {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+#upper {
     background-color: white;
+    border: 1px solid red;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#lower {
+    background-color: white;
+    border: 1px solid red;
     color: black;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .button-container {

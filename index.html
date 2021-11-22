@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>calProject</title>
     <link rel="stylesheet" href="reset.css" media="all">
     <link rel="stylesheet" href="main.css">
     <script src="script.js" defer></script>
@@ -12,20 +12,21 @@
 <body>
     <div id="container">
         <div class="output-container">
-            <div id="output"></div>
+            <div class="output" id="upper"></div>
+            <div class="output" id="lower"></div>
         </div>
         <div class="button-container">
-            <button class="number" value="1" onclick="calDisplay(1)">1</button>
-            <button class="number" value="2" onclick="calDisplay(2)">2</button>
-            <button class="number" value="3">3</button>
-            <button class="number" value="4">4</button>
-            <button class="number" value="5">5</button>
-            <button class="number" value="6">6</button>
-            <button class="number" value="7">7</button>
-            <button class="number" value="8">8</button>
-            <button class="number" value="9">9</button>
-            <button class="number" id="num0" value="0">0</button>
-            <button class="number">.</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="number" id="num0">0</button>
+            <button class="decimal">.</button>
             <button class="operator" id="plusBtn" onclick="calDisplay('+')">+</button>
             <button class="operator" id="minusBtn">-</button>
             <button class="operator" id="timesBtn">x</button>

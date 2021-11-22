@@ -1,7 +1,7 @@
 
 //global variables
-const display = document.getElementById('output');
-const numBtn = document.querySelectorAll('.number')
+const numBtn = document.querySelectorAll('.number');
+const decimal = document.getElementsByClassName('decimal');
 const plusBtn = document.getElementById('plusBtn');
 const minusBtn = document.getElementById('minusBtn');
 const timesBtn = document.getElementById('timesBtn');
@@ -9,6 +9,7 @@ const divideBtn = document.getElementById('divideBtn');
 const equalsBtn = document.getElementById('equalsBtn');
 const clearBtn = document.getElementById('clearBtn');
 const deleteBtn = document.getElementById('deleteBtn');
+const lowerDisplay = document.getElementById('lower');
 
 //true false values to set if its plus,minus,divide or times
 let add = false;
@@ -17,6 +18,9 @@ let div = false;
 let multi = false;
 
 //event lsiteners
+numBtn.forEach((button) => button.addEventListener('click', function(e){
+    lowerDisplay.innerText += button.innerHTML;
+}))
 clearBtn.addEventListener('click', clearCal);
 equalsBtn.addEventListener('click', equals);
 plusBtn.addEventListener('click', function(){
@@ -53,14 +57,9 @@ function equals(){
     }
 }
 
-//calculator display 
-function calDisplay(x){
-    document.getElementById('output').value += x;
-}
-
 //clear calculator display
 function clearCal(){
-    document.getElementById('output').value = '';
+    lowerDisplay.textContent = '';
     add = false;
     sub = false;
     div = false;
