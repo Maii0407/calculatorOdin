@@ -55,7 +55,7 @@ function equals(){
 
 //calculator display 
 function calDisplay(x){
-    document.getElementById('output').value += x
+    document.getElementById('output').value += x;
 }
 
 //clear calculator display
