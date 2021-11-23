@@ -7,6 +7,7 @@
     <title>calProject</title>
     <link rel="stylesheet" href="reset.css" media="all">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -27,10 +28,10 @@
             <button class="number">9</button>
             <button class="number" id="num0">0</button>
             <button class="decimal">.</button>
-            <button class="operator" id="plusBtn">+</button>
-            <button class="operator" id="minusBtn">-</button>
-            <button class="operator" id="timesBtn">x</button>
-            <button class="operator" id="divideBtn">÷</button>
+            <button class="operator" id="plusBtn" onclick="turnAdd()">+</button>
+            <button class="operator" id="minusBtn" onclick="turnSub()">-</button>
+            <button class="operator" id="timesBtn" onclick="turnMulti()">x</button>
+            <button class="operator" id="divideBtn" onclick="turnDiv()">÷</button>
             <button id="equalsBtn">=</button>
             <button id="clearBtn">Clear</button>
             <button id="deleteBtn">Delete</button>
