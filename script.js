@@ -8,6 +8,7 @@ const clearBtn = document.getElementById('clearBtn');
 const deleteBtn = document.getElementById('deleteBtn');
 const lowerDisplay = document.getElementById('lower');
 const upperDisplay = document.getElementById('upper');
+const operatorDisplay = document.getElementById('operator-display');
 
 let add = false;
 let sub = false;
@@ -21,6 +22,7 @@ numBtn.forEach((button) => button.addEventListener('click', function(e){
 }));
 operatorBtn.forEach((button) => button.addEventListener('click', function(e){
     upperDisplay.innerHTML = lowerDisplay.innerHTML;
+    operatorDisplay.innerHTML = button.innerHTML;
     lowerDisplay.innerHTML = '';
 }));
 equalsBtn.addEventListener('click', equals);
@@ -46,15 +48,19 @@ function equals(e){
     if(sub === true){
         upperDisplay.innerHTML = minus(upperDisplay.innerHTML, lowerDisplay.innerHTML);
         lowerDisplay.innerHTML = '';
+        operatorDisplay.textContent = '';
     } else if(div === true){
         upperDisplay.innerHTML = divide(upperDisplay.innerHTML, lowerDisplay.innerHTML);
         lowerDisplay.innerHTML = '';
+        operatorDisplay.textContent = '';
     } else if(multi === true){
         upperDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
         lowerDisplay.innerHTML = '';
+        operatorDisplay.textContent = '';
     } else{
-        upperDisplay.innerHTML = plus(parseInt(upperDisplay.innerHTML), parseInt(lowerDisplay.innerHTML));
+        upperDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
         lowerDisplay.innerHTML = '';
+        operatorDisplay.textContent = '';
     }
 }
 
@@ -62,6 +68,7 @@ function equals(e){
 function clearCal(){
     lowerDisplay.textContent = '';
     upperDisplay.textContent = '';
+    operatorDisplay.textContent = '';
     add = false;
     sub = false;
     div = false;
