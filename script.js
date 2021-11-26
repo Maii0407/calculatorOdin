@@ -1,7 +1,7 @@
 
 //global variables
 const numBtn = document.querySelectorAll('.number');
-const decimal = document.getElementsByClassName('decimal');
+const decBtn = document.getElementById('decimal');
 const operatorBtn = document.querySelectorAll('.operator');
 const equalsBtn = document.getElementById('equalsBtn');
 const clearBtn = document.getElementById('clearBtn');
@@ -15,16 +15,29 @@ let sub = false;
 let div = false;
 let multi = false;
 
-//event lsiteners
+//event listeners
 clearBtn.addEventListener('click', clearCal);
+
+deleteBtn.addEventListener('click', function(){
+    lowerDisplay.innerHTML = lowerDisplay.innerHTML.slice(0, -1);
+})
+
 numBtn.forEach((button) => button.addEventListener('click', function(e){
     lowerDisplay.innerHTML += button.innerHTML;
-}));
+}))
+
 operatorBtn.forEach((button) => button.addEventListener('click', function(e){
     upperDisplay.innerHTML = lowerDisplay.innerHTML;
     operatorDisplay.innerHTML = button.innerHTML;
     lowerDisplay.innerHTML = '';
-}));
+    decBtn.disabled = false;
+}))
+
+decBtn.addEventListener('click', function(e){
+    lowerDisplay.innerHTML += e.target.innerHTML;
+    decBtn.disabled = true;
+})
+
 equalsBtn.addEventListener('click', equals);
 
 //mathematical functions for the calculator
@@ -41,6 +54,10 @@ function times(x, y){
 }
 
 function divide(x, y){
+    if(x || y === 0){
+        alert('LOL u cant do that lemme just reload the page');
+        location.reload();
+    }
     return x / y;
 }
 
@@ -57,7 +74,10 @@ function equals(e){
         upperDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
         lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
-    } else{
+    }else if(upperDisplay.innerHTML === '' || operatorDisplay.innerHTML === '' ||
+    lowerDisplay.innerHTML === ''){
+        clearCal();
+    }else{
         upperDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
         lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
@@ -73,6 +93,7 @@ function clearCal(){
     sub = false;
     div = false;
     multi = false;
+    decBtn.disabled = false;
 }
 
 //decide which math operation to use

@@ -14,6 +14,10 @@ button {
     font-size: 35px;
 }
 
+.operator {
+    background-color: crimson;
+}
+
 button:hover {
     background-color: dimgray;
 }
@@ -38,6 +42,8 @@ button:hover {
 
 #upper {
     background-color: white;
+    font-family: 'Comforter Brush', cursive;
+    font-size: 35px;
     border: 1px solid red;
     display: flex;
     justify-content: flex-end;
@@ -45,14 +51,18 @@ button:hover {
 
 #operator-display {
     background-color: white;
+    font-family: 'Comforter Brush', cursive;
+    font-size: 35px;
     color: black;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     border: 1px solid red;
 }
 
 #lower {
     background-color: white;
+    font-family: 'Comforter Brush', cursive;
+    font-size: 35px;
     border: 1px solid red;
     color: black;
     display: flex;
