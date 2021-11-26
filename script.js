@@ -27,10 +27,14 @@ numBtn.forEach((button) => button.addEventListener('click', function(e){
 }))
 
 operatorBtn.forEach((button) => button.addEventListener('click', function(e){
-    upperDisplay.innerHTML = lowerDisplay.innerHTML;
-    operatorDisplay.innerHTML = button.innerHTML;
-    lowerDisplay.innerHTML = '';
-    decBtn.disabled = false;
+    if(upperDisplay.textContent === ''){
+        upperDisplay.innerHTML = lowerDisplay.innerHTML;
+        operatorDisplay.innerHTML = button.innerHTML;
+        lowerDisplay.innerHTML = '';
+        decBtn.disabled = false;
+    } else{
+        equals();
+    }
 }))
 
 decBtn.addEventListener('click', function(e){
@@ -54,10 +58,6 @@ function times(x, y){
 }
 
 function divide(x, y){
-    if(x || y === 0){
-        alert('LOL u cant do that lemme just reload the page');
-        location.reload();
-    }
     return x / y;
 }
 
