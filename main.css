@@ -23,9 +23,9 @@ button:hover {
 }
 
 #container {
+    padding-top: 50px;
     width: 1000px;
     height: 500px;
-    border: 1px solid red;
     display: grid;
     grid-template-rows: 1fr 3fr;
 }
@@ -38,35 +38,34 @@ button:hover {
 .output-container {
     display: grid;
     grid-template-rows: 1fr 2fr;
+    border: 2px solid black;
 }
 
 #upper {
-    background-color: white;
+    background-color: gray;
     font-family: 'Comforter Brush', cursive;
     font-size: 35px;
-    border: 1px solid red;
     display: flex;
     justify-content: flex-end;
 }
 
 #operator-display {
-    background-color: white;
+    background-color: gray;
     font-family: 'Comforter Brush', cursive;
     font-size: 35px;
     color: black;
     display: flex;
     justify-content: center;
-    border: 1px solid red;
 }
 
 #lower {
-    background-color: white;
+    background-color: gray;
     font-family: 'Comforter Brush', cursive;
-    font-size: 35px;
-    border: 1px solid red;
+    font-size: 50px;
     color: black;
     display: flex;
     justify-content: flex-end;
+    padding-top: 30px;
 }
 
 .button-container {

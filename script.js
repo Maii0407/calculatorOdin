@@ -63,23 +63,23 @@ function divide(x, y){
 
 function equals(e){
     if(sub === true){
-        upperDisplay.innerHTML = minus(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        lowerDisplay.innerHTML = '';
+        lowerDisplay.innerHTML = minus(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        upperDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     } else if(div === true){
-        upperDisplay.innerHTML = divide(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        lowerDisplay.innerHTML = '';
+        lowerDisplay.innerHTML = divide(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        upperDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     } else if(multi === true){
-        upperDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        lowerDisplay.innerHTML = '';
+        lowerDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        upperDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     }else if(upperDisplay.innerHTML === '' || operatorDisplay.innerHTML === '' ||
     lowerDisplay.innerHTML === ''){
         clearCal();
     }else{
-        upperDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
-        lowerDisplay.innerHTML = '';
+        lowerDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
+        upperDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     }
 }
