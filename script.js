@@ -10,11 +10,6 @@ const lowerDisplay = document.getElementById('lower');
 const upperDisplay = document.getElementById('upper');
 const operatorDisplay = document.getElementById('operator-display');
 
-let add = false;
-let sub = false;
-let div = false;
-let multi = false;
-
 //event listeners
 clearBtn.addEventListener('click', clearCal);
 
@@ -34,6 +29,7 @@ operatorBtn.forEach((button) => button.addEventListener('click', function(e){
         decBtn.disabled = false;
     } else{
         equals();
+        operatorDisplay.innerHTML = button.innerHTML;
     }
 }))
 
@@ -62,24 +58,24 @@ function divide(x, y){
 }
 
 function equals(e){
-    if(sub === true){
-        lowerDisplay.innerHTML = minus(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        upperDisplay.innerHTML = '';
+    if(operatorDisplay.innerHTML === '-'){
+        upperDisplay.innerHTML = minus(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
-    } else if(div === true){
-        lowerDisplay.innerHTML = divide(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        upperDisplay.innerHTML = '';
+    } else if(operatorDisplay.innerHTML === '÷'){
+        upperDisplay.innerHTML = divide(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
-    } else if(multi === true){
-        lowerDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
-        upperDisplay.innerHTML = '';
+    } else if(operatorDisplay.innerHTML === 'x'){
+        upperDisplay.innerHTML = times(upperDisplay.innerHTML, lowerDisplay.innerHTML);
+        lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     }else if(upperDisplay.innerHTML === '' || operatorDisplay.innerHTML === '' ||
     lowerDisplay.innerHTML === ''){
         clearCal();
     }else{
-        lowerDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
-        upperDisplay.innerHTML = '';
+        upperDisplay.innerHTML = plus(Number(upperDisplay.innerHTML), Number(lowerDisplay.innerHTML));
+        lowerDisplay.innerHTML = '';
         operatorDisplay.textContent = '';
     }
 }
@@ -89,38 +85,5 @@ function clearCal(){
     lowerDisplay.textContent = '';
     upperDisplay.textContent = '';
     operatorDisplay.textContent = '';
-    add = false;
-    sub = false;
-    div = false;
-    multi = false;
     decBtn.disabled = false;
-}
-
-//decide which math operation to use
-function turnAdd(){
-    add = true;
-    sub = false;
-    div = false;
-    multi = false;
-}
-
-function turnSub(){
-    add = false;
-    sub = true;
-    div = false;
-    multi = false;
-}
-
-function turnDiv(){
-    add = false;
-    sub = false;
-    div = true;
-    multi = false;
-}
-
-function turnMulti(){
-    add = false;
-    sub = false;
-    div = false;
-    multi = true;
 }

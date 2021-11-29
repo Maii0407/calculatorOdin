@@ -121,3 +121,26 @@ button:hover {
     grid-row-start: 4;
     grid-row-end: 5;
 }
+
+#equalsBtn {
+    background-color: silver;
+    color: black;
+}
+
+#equalsBtn:hover {
+    background-color: dimgray;
+}
+
+.operator:hover {
+    background-color: orangered;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
